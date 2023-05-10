@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/plazas_100m"
+        android:title="@string/plazas_100m" />
+    <item
+        android:id="@+id/plazas_Barrios"
+        android:title="@string/plazas_Barrios" />
+</menu>

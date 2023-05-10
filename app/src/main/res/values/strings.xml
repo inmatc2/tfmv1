@@ -1,0 +1,7 @@
+<resources>
+    <string name="title_activity_maps">PMR Caceres</string>
+    <string name="plazas_100m">Plazas a 100 metros</string>
+    <string name="plazas_Barrios">Plazas por barrios</string>
+    <string name="permiso_Denegado">No se ha otorgado permiso de ubicación</string>
+    <string name="ubicacion_defecto">No se ha encontrado la ubicación, utilizando la ubicación por defecto</string>
+</resources>

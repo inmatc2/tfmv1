@@ -1,10 +1,8 @@
-package com.example.tfmPMR;
-
-import android.location.Location;
+package model;
 
 import com.google.android.gms.maps.model.LatLng;
 
-public class PMRData {
+public class ReducedMovilityPlace {
     private String nombre;
     private String descripcion;
     private LatLng ubicacion;
@@ -19,7 +17,7 @@ public class PMRData {
 
     private String barrio;
 
-    public PMRData(String nombre, String descripcion, LatLng ubicacion) {
+    public ReducedMovilityPlace(String nombre, String descripcion, LatLng ubicacion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.ubicacion = ubicacion;

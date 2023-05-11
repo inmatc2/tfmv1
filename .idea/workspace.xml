@@ -9,7 +9,20 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10e49ab3-dc1f-4420-9d5a-5e060abd5f51" name="Changes" comment="" />
+    <list default="true" id="10e49ab3-dc1f-4420-9d5a-5e060abd5f51" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/model/MapsModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/model/MapsModelImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/presenter/MapsPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/presenter/MapsPresenterImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/views/MapsView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/views/MapsViewImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tfmPMR/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tfmPMR/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tfmPMR/NetworkFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/model/NetworkFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tfmPMR/PMRData.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/model/ReducedMovilityPlace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tfmPMR/PMRFunctions.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,8 +38,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -35,32 +52,37 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2Kd0B7wtTXiqaqvSXDjTLqHLlau" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;android-custom-view/home/inmatc2/Android/Sdk/sources/android-33/android/view/View.java_SELECTED&quot;: &quot;View&quot;,
-    &quot;android-custom-view/home/inmatc2/Android/Sdk/sources/android-33/android/view/ViewGroup.java_SELECTED&quot;: &quot;ViewGroup&quot;,
-    &quot;android-custom-view/home/inmatc2/Android/Sdk/sources/android-33/android/widget/AbsListView.java_SELECTED&quot;: &quot;AbsListView&quot;,
-    &quot;android-custom-view/home/inmatc2/Android/Sdk/sources/android-33/android/widget/AdapterView.java_SELECTED&quot;: &quot;AdapterView&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/inmatc2/AndroidStudioProjects/tfmv1&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "android-custom-view/home/inmatc2/Android/Sdk/sources/android-33/android/view/View.java_SELECTED": "View",
+    "android-custom-view/home/inmatc2/Android/Sdk/sources/android-33/android/view/ViewGroup.java_SELECTED": "ViewGroup",
+    "android-custom-view/home/inmatc2/Android/Sdk/sources/android-33/android/widget/AbsListView.java_SELECTED": "AbsListView",
+    "android-custom-view/home/inmatc2/Android/Sdk/sources/android-33/android/widget/AdapterView.java_SELECTED": "AdapterView",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/home/inmatc2/AndroidStudioProjects/tfmv1/app/src/main/java/views",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="PsdUISettings">
     <option name="MODULE_TAB" value="Signing Configs" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/views" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/presenter" />
       <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -137,6 +159,17 @@
       <updated>1674289013333</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

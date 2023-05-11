@@ -4,7 +4,5 @@
     <item
         android:id="@+id/plazas_100m"
         android:title="@string/plazas_100m" />
-    <item
-        android:id="@+id/plazas_Barrios"
-        android:title="@string/plazas_Barrios" />
+
 </menu>

@@ -1,4 +1,4 @@
-package com.example.tfmPMR;
+package model;
 
 import android.util.Log;
 import android.widget.Toast;
@@ -30,7 +30,7 @@ public class NetworkFunctions extends Thread {
      * @param url
      * @throws IOException
      */
-    NetworkFunctions(String url) throws IOException {
+    public NetworkFunctions(String url) throws IOException {
         this.paramURL = headerURL.concat(url);
     }
 

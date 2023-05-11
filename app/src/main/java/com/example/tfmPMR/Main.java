@@ -1,7 +1,6 @@
 package com.example.tfmPMR;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -29,19 +28,15 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Map;
+
+import model.MapsModelImpl;
+import model.ReducedMovilityPlace;
 
 
 public class Main extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
@@ -50,21 +45,20 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback, Googl
     private static final String KEY_CAMERA_POSITION = "camera_position";
     private static final String KEY_LOCATION = "location";
     private static final String TAG = Main.class.getSimpleName();
+    private static final int DEFAULT_ZOOM = 15;
+    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
 
     private GoogleMap map;
 
     // Punto de acceso Fused Location Provider.
     private FusedLocationProviderClient fusedLocationProviderClient;
 
-    private static final int DEFAULT_ZOOM = 15;
-    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+
     private boolean permissionUbicationOK = false;
 
     //Ubicacion del dispositivo
     private static Location ubicationNow;
 
-    public static FirebaseAuth mAuth;
-    public static FirebaseUser user;
 
 
     /**
@@ -120,7 +114,6 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback, Googl
         if (this.permissionUbicationOK) {
             actualizaLocationUI();
             obtenerUbicacion();
-            PMRFunctions.firebaseActions();
 
         }
         map.setOnMarkerClickListener(this);
@@ -175,8 +168,8 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback, Googl
      * Obtiene las plazas cercanas a 100 metros de la ubicacion del usuario. Crea los marcadores referentes, los pinta en el mapa y muestra zoom alto
      */
     private void showMePlaces100m() throws IOException {
-        ArrayList<PMRData> list100Places = PMRFunctions.Places100m(ubicationNow);
-        for (PMRData pmr : list100Places) {
+        ArrayList<ReducedMovilityPlace> list100Places = MapsModelImpl.getPMRFromOpenData(ubicationNow);
+        for (ReducedMovilityPlace pmr : list100Places) {
             MarkerOptions marker = new MarkerOptions()
                     .title(pmr.getNombre())
                     .position(pmr.getUbicacion())
@@ -312,23 +305,23 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback, Googl
 
     ///////////METODOS NO  USADOS///////////777
 
-    /**
+   /**
      * Obtiene las plazas cercanas a 5 metros de la ubicacion del usuario y las muestra en un dialogo.
 
      private void showMeBarrios() throws IOException {
-     ArrayList<PMRData> conjuntoDePlazas = PMRFunctions.Places100m(ubicationNow);
+     ArrayList<ReducedMovilityPlace> conjuntoDePlazas = PMRFunctions.Places100m(ubicationNow);
      String[] arrayNombresPlazas = PMRFunctions.obtenerNombrePlazas(conjuntoDePlazas);
      //this.abrirDialogoConPlazas(conjuntoDePlazas, arrayNombresPlazas);
-     }
+     }>
 
      /**
      * Se muestra un dialogo con las plazas mas cercanas a 5 metros obtenidas. Al seleccionar una de ellas se dirige a la ubicación con un marcador
 
-     private void abrirDialogoConPlazas(PMRData[] conjuntoDePlazas, String[] arrayNombresPlazas) {
+     private void abrirDialogoConPlazas(ReducedMovilityPlace[] conjuntoDePlazas, String[] arrayNombresPlazas) {
 
      //Al pulsar en una plaza se obtiene la posicion y se busca en la lista. A continuacion se crea un marcador y se redirige la camara
      DialogInterface.OnClickListener listener = (dialog, pos) -> {
-     PMRData pmr = conjuntoDePlazas[pos];
+     ReducedMovilityPlace pmr = conjuntoDePlazas[pos];
 
      map.addMarker(new MarkerOptions()
      .title(pmr.getNombre())
@@ -350,8 +343,8 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback, Googl
      /**
      * Se crea un marcaador para cada PMR del array, se pinta en el mapa y se muestra una con zoom alto
 
-     private void crearMarcadoresPlazas(PMRData[] conjuntoDePlazas) {
-     for (PMRData pmr : conjuntoDePlazas) {
+     private void crearMarcadoresPlazas(ReducedMovilityPlace[] conjuntoDePlazas) {
+     for (ReducedMovilityPlace pmr : conjuntoDePlazas) {
      map.addMarker(new MarkerOptions()
      .title(pmr.getNombre())
      .position(pmr.getUbicacion())
